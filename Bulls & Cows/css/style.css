@@ -3,8 +3,10 @@ body {
 }
 
 .container {
-	width: 720px;
-	margin: 0 auto;
+	min-width: 600;
+	max-width: 50%;
     height: 100%;
-    background: linear-gradient(to top, #f0fc0a, #f1da36);
+    margin: 0 auto;
+    box-shadow: 10px 10px 10px rgba(0,0,0,.5); 
+    background-color: #E1EDEB; 
 }
