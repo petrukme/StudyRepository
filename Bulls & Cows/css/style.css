@@ -1,7 +1,3 @@
-body {
-	
-}
-
 .container {
 	border-radius: 20px;
 	width: 460px;
@@ -17,4 +13,11 @@ body {
 	background: -ms-linear-gradient(top,  #4f85bb 0%,#4f85bb 100%); /* IE10+ */
 	background: linear-gradient(to bottom,  #4f85bb 0%,#4f85bb 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f85bb', endColorstr='#4f85bb',GradientType=0 ); /* IE6-9 */
+}
+
+.line {
+	background: #2d6399;
+	border-radius: 5px;
+	padding: 20px;
+	margin:  20px;
 }
