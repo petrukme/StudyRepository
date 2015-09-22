@@ -1,23 +1,127 @@
 .container {
-	border-radius: 20px;
-	width: 460px;
-	height: 700px;
+	width: 410px;
+	height: 728px;
     margin: 0 auto;
-    padding: 20px;
+    border-radius: 20px;
     box-shadow: 10px 10px 10px rgba(0,0,0,.5); 
-	background: #4f85bb; /* Old browsers */
-	background: -moz-linear-gradient(top,  #4f85bb 0%, #4f85bb 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4f85bb), color-stop(100%,#4f85bb)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #4f85bb 0%,#4f85bb 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #4f85bb 0%,#4f85bb 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #4f85bb 0%,#4f85bb 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #4f85bb 0%,#4f85bb 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f85bb', endColorstr='#4f85bb',GradientType=0 ); /* IE6-9 */
+	background: #4f85bb;
 }
 
 .line {
-	background: #2d6399;
+    height: 52px;
+	background-color: #2d6399;
 	border-radius: 5px;
-	padding: 20px;
-	margin:  20px;
+	margin: 28px 28px 0px;
+	font-size: 48px;
+	color: #a1b71d;
+}
+
+.active {
+  background-color: #3d73a9;
+}
+
+.lines {
+    padding-top: 10px;
+}
+
+.line-number, 
+.infobox,
+.ball-spot {
+  float: left;
+  margin-left: 18px;
+}
+
+.infobox {
+	width: 48px;
+	height: 48px;
+	background: lightyellow;
+	border-radius: 8px;
+    margin-top: 2px;
+    margin-right: 18px;
+}
+
+.result-spot {
+    display: inline-block;
+    float: left;
+    margin: 8px;
+  	width: 8px;
+	height: 8px;
+	background: black;
+	border-radius: 50%;
+}
+
+.result {
+    margin: 6px;
+  	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+}
+
+.bull {
+    background-color: black;
+}
+
+.cow {
+    background-color: white;
+}
+
+
+.ball-spot {
+    width: 36px;
+	height: 36px;
+	background: black;
+	border-radius: 50%;
+    margin: 8px;
+}
+
+.ball-spot:hover {
+  background-color: #999999;
+}
+
+.ball {
+  	width: 48px;
+	height: 48px;
+    margin: 2px 4px;
+	border-radius: 50%;
+}
+
+.balls-avaliable {
+  height: 52px;
+  margin: 16px 30px;
+  border-radius: 12px;
+  background-color: #123456;
+}
+
+.balls-avaliable .ball{
+  margin-right: 5px;
+}
+
+.color-white,
+.color-white:hover {
+  background-color: #eeeeee;
+}
+
+.color-pink,
+.color-pink:hover {
+  background-color: pink;
+}
+
+.color-yellow,
+.color-yellow:hover {
+  background-color: yellow;
+}
+
+.color-green,
+.color-green:hover {
+  background-color: green;
+}
+
+.color-red,
+.color-red:hover {
+  background-color: #dd0000;
+}
+
+.color-blue,
+.color-blue:hover {
+  background-color: steelblue;
 }
