@@ -14,10 +14,11 @@
 	margin: 28px 28px 0px;
 	font-size: 48px;
 	color: #a1b71d;
+    -webkit-user-select: none;  
 }
 
 .active {
-  background-color: #3d73a9;
+  	background-color: #3d73a9;
 }
 
 .lines {
@@ -27,14 +28,14 @@
 .line-number, 
 .infobox,
 .ball-spot {
-  float: left;
-  margin-left: 18px;
+	float: left;
+	margin-left: 18px;
 }
 
 .infobox {
 	width: 48px;
 	height: 48px;
-	background: lightyellow;
+	background: #ffffe0;
 	border-radius: 8px;
     margin-top: 2px;
     margin-right: 18px;
@@ -46,7 +47,7 @@
     margin: 8px;
   	width: 8px;
 	height: 8px;
-	background: black;
+	background: #111111;
 	border-radius: 50%;
 }
 
@@ -58,11 +59,11 @@
 }
 
 .bull {
-    background-color: black;
+    background-color: #111111;
 }
 
 .cow {
-    background-color: white;
+    background-color: #eeeeee;
 }
 
 
@@ -93,7 +94,7 @@
 }
 
 .balls-avaliable .ball{
-  margin-right: 5px;
+  margin: 2px 5px;
 }
 
 .color-white,
@@ -103,17 +104,17 @@
 
 .color-pink,
 .color-pink:hover {
-  background-color: pink;
+  background-color: #ffc0cb;
 }
 
 .color-yellow,
 .color-yellow:hover {
-  background-color: yellow;
+  background-color: #ffff00;
 }
 
 .color-green,
 .color-green:hover {
-  background-color: green;
+  background-color: #008000;
 }
 
 .color-red,
@@ -123,5 +124,5 @@
 
 .color-blue,
 .color-blue:hover {
-  background-color: steelblue;
+  background-color: #b0c4de;
 }
