@@ -1,19 +1,19 @@
 .container {
-	width: 410px;
-	height: 728px;
+    width: 410px;
+    height: 728px;
     margin: 0 auto;
     border-radius: 20px;
     box-shadow: 10px 10px 10px rgba(0,0,0,.5); 
-	background: #4f85bb;
+    background: #4f85bb;
 }
 
 .line {
     height: 52px;
-	background-color: #2d6399;
-	border-radius: 5px;
-	margin: 28px 28px 0px;
-	font-size: 48px;
-	color: #a1b71d;
+    background-color: #2d6399;
+    border-radius: 5px;
+    margin: 28px 28px 0px;
+    font-size: 48px;
+    color: #a1b71d;
     -webkit-user-select: none;    
 }
 
@@ -28,22 +28,22 @@
 .line-number, 
 .infobox,
 .ball-spot {
-	float: left;
-	margin-left: 18px;
+    float: left;
+    margin-left: 18px;
 }
 
 .infobox {
-	width: 48px;
-	height: 48px;
-	background: #ffffe0;
-	border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    background: #ffffe0;
+    border-radius: 8px;
     margin-top: 2px;
     margin-right: 18px;
 }
 
 .ok-button {
     width: 48px;
-	height: 38px;
+    height: 38px;
     font-size: 24px;
     text-align: center;
     color: white;
@@ -77,16 +77,16 @@
     float: left;
     margin: 8px;
     width: 8px;
-	height: 8px;
-	background: #111111;
-	border-radius: 50%;
+    height: 8px;
+    background: #111111;
+    border-radius: 50%;
 }
 
 .result {
     margin: 6px;
     width: 12px;
-	height: 12px;
-	border-radius: 50%;
+    height: 12px;
+    border-radius: 50%;
 }
 
 .bull {
@@ -100,9 +100,9 @@
 
 .ball-spot {
     width: 36px;
-	height: 36px;
-	background: black;
-	border-radius: 50%;
+    height: 36px;
+    background: black;
+    border-radius: 50%;
     margin: 8px;
 }
 
@@ -112,9 +112,9 @@
 
 .ball {
     width: 48px;
-	height: 48px;
+    height: 48px;
     margin: 2px 4px;
-	border-radius: 50%;
+    border-radius: 50%;
 }
 
 .balls-avaliable {
