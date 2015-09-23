@@ -14,11 +14,11 @@
 	margin: 28px 28px 0px;
 	font-size: 48px;
 	color: #a1b71d;
-    -webkit-user-select: none;  
+    -webkit-user-select: none;    
 }
 
 .active {
-  	background-color: #3d73a9;
+    background-color: #3d73a9;
 }
 
 .lines {
@@ -41,11 +41,42 @@
     margin-right: 18px;
 }
 
+.ok-button {
+    width: 48px;
+	height: 38px;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+    background: rgb(94, 199, 99);
+}
+
+.ok-button:hover {
+    background: rgb(53, 167, 110); 
+}
+
+.ok-button:active {
+    background: rgb(33,147,90);
+}
+
+
+.ok-button .result-spot {
+    display: none;
+}
+
+.ok-text {
+    display: none;
+}
+
+.ok-button .ok-text {
+    display: block;
+}
+
 .result-spot {
     display: inline-block;
     float: left;
     margin: 8px;
-  	width: 8px;
+    width: 8px;
 	height: 8px;
 	background: #111111;
 	border-radius: 50%;
@@ -53,7 +84,7 @@
 
 .result {
     margin: 6px;
-  	width: 12px;
+    width: 12px;
 	height: 12px;
 	border-radius: 50%;
 }
@@ -76,53 +107,53 @@
 }
 
 .ball-spot:hover {
-  background-color: #999999;
+    background-color: #999999;
 }
 
 .ball {
-  	width: 48px;
+    width: 48px;
 	height: 48px;
     margin: 2px 4px;
 	border-radius: 50%;
 }
 
 .balls-avaliable {
-  height: 52px;
-  margin: 16px 30px;
-  border-radius: 12px;
-  background-color: #123456;
+    height: 52px;
+    margin: 16px 30px;
+    border-radius: 12px;
+    background-color: #123456;
 }
 
 .balls-avaliable .ball{
-  margin: 2px 5px;
+    margin: 2px 5px;
 }
 
 .color-white,
 .color-white:hover {
-  background-color: #eeeeee;
+    background-color: #eeeeee;
 }
 
 .color-pink,
 .color-pink:hover {
-  background-color: #ffc0cb;
+    background-color: #ffc0cb;
 }
 
 .color-yellow,
 .color-yellow:hover {
-  background-color: #ffff00;
+    background-color: #ffff00;
 }
 
 .color-green,
 .color-green:hover {
-  background-color: #008000;
+    background-color: #008000;
 }
 
 .color-red,
 .color-red:hover {
-  background-color: #dd0000;
+    background-color: #dd0000;
 }
 
 .color-blue,
 .color-blue:hover {
-  background-color: #b0c4de;
+    background-color: #b0c4de;
 }
