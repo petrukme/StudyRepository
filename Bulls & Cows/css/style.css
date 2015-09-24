@@ -25,7 +25,7 @@
     padding-top: 10px;
 }
 
-.line-number, 
+.turn-number, 
 .infobox,
 .ball-spot {
     float: left;
@@ -126,6 +126,14 @@
 
 .balls-avaliable .ball{
     margin: 2px 5px;
+}
+
+.ball-spot {
+    font-size: 0px;
+}
+
+.active-ball {
+    box-shadow: 0px 0px 4px 4px lightyellow;
 }
 
 .color-white,
