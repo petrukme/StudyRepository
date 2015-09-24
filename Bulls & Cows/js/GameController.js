@@ -1,26 +1,28 @@
 var gameController = function() {
+  'use strict';
   var ballTypes = ['color-white', 'color-pink', 'color-yellow',
                    'color-green', 'color-red', 'color-blue'],
       combination = [0, 0, 0, 0],
-      currentCombination,
-      selectedBallColor,
+      currentCombination = [],
+      selectedBallColor = ballTypes[0],
       turnNumber = 1, // number from 1 to 8
-      currentTurnDiv;
+      currentTurnDiv = getDivTurn(turnNumber);
   
   function getDivTurn(n) {
     var turnsNumbers = document.getElementsByClassName('turn-number'),
         i;
     for(i = 0; i < turnsNumbers.length; i++) {
       if(+turnsNumbers[i].innerText === n) {
-        return turnsNumbers[i];
+        return turnsNumbers[i].parentNode;
       }
     }
   }
   
   function nextTurn() {
-    var nextTurnNumber = getDivTurn(++turnNumber);
     currentCombination = [];
-    
+    removeEventListenersForCurrentTurn();
+    currentTurnDiv = getDivTurn(++turnNumber);
+    addEventListenersForCurrentTurn();
   }
   
   function compareCombinations() {
@@ -55,7 +57,13 @@ var gameController = function() {
     },
     
     ballSpotOnClick: function(elem) {
-      
+      var classes = elem.className.split(' ');
+      if(elem.parentNode.parentNode !== currentTurnDiv) {
+        return;
+      }
+      classes[1] = 'ball';
+      classes[2] = selectedBallColor;
+      elem.className = classes.join(' ');
     },
     
     ballSelectOnClick: function(elem) {
