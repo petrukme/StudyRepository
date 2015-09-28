@@ -5,8 +5,9 @@ var gameController = function() {
       combination = [0, 0, 0, 0], 
       currentCombination = [],
       selectedBallColor = ballTypes[0],
-      turnNumber = 1, // number from 1 to 8
-      currentTurn = getTurn(turnNumber);
+      turnNumber = 1,
+      currentTurn = getTurn(turnNumber),
+      gameOver = false;
   
   generateSequence();
   addOkButton();
@@ -19,7 +20,7 @@ var gameController = function() {
   }
 
   function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min)) + min;
   }
 
   function getTurn(n) {
@@ -35,26 +36,35 @@ var gameController = function() {
   function nextTurn() {
     currentCombination = [];
     removeOkButton();
+    if(turnNumber === 8) {
+      defeat();
+      return;
+    }
     currentTurn = getTurn(++turnNumber);
     addOkButton();
   }
 
   function compareCombinations(a, b) {
-    var res = {color: 0, colorAndPosition: 0}, 
-        visitedIndexes = [-1, -1, -1, -1],
-        i, 
-        index;
+    var res = {color: 0, colorAndPosition: 0};
 
-    for(i = 0; i < a.length; i++) {
-      index = b.indexOf(a[i], visitedIndexes[a[i]]+1);
+    res.colorAndPosition = a.reduce(function(res, elem, index){
+       return elem === b[index] ? ++res : res;
+    }, 0);
+    res.color = gotSameColor(a.slice(), b);
+    
+    return res;
+  }
+
+  function gotSameColor(a, b) {
+    var res = 0,
+        index,
+        i;
+    for(i = 0; i < b.length; i++) {
+      index = a.indexOf(b[i]);
       if(~index) {
-        visitedIndexes[a[i]] = visitedIndexes[a[i]] < index ? index : visitedIndexes[a[i]];
-        if(i === index) {
-          res.colorAndPosition++;
-          continue;
-        }
-        res.color++;
-      }
+        res++;
+        a[index] = undefined;
+      } 
     }
     return res;
   }
@@ -71,7 +81,7 @@ var gameController = function() {
 
  function okButtonOnClick() {
       var res;
-      if(!isCurrentCumbinationFull()) {
+      if(gameOver || !isCurrentCumbinationFull()) {
         return;
       }
       res = compareCombinations(currentCombination, combination);
@@ -79,6 +89,7 @@ var gameController = function() {
         victory();
         return;
       }
+      displayResults(res);
       nextTurn();
     }
 
@@ -95,18 +106,31 @@ var gameController = function() {
     okButtonDiv.removeEventListener('click', okButtonOnClick);
   }
 
-  function displayResults() {
-    
+  function displayResults(res) {
+    var results = currentTurn.getElementsByClassName('result-spot'), 
+        i;
+    for(i = 0; i < res.color; i++)
+      if(i < res.colorAndPosition)
+        results[i].className += ' result bull';
+      else
+        results[i].className += ' result cow';
+  }
+
+  function defeat() {
+    alert('You lost!');
+    gameOver = true;
+
   }
 
   function victory() {
     alert("Victory!");
+    gameOver = true;
   }
   
   return {
     ballSpotOnClick: function(elem) {
       var classes = elem.className.split(' ');
-      if(elem.parentNode.parentNode !== currentTurn) {
+      if(gameOver || elem.parentNode.parentNode !== currentTurn) {
         return;
       }
       classes[1] = 'ball';
