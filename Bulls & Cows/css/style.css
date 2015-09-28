@@ -103,7 +103,7 @@
     height: 36px;
     background: black;
     border-radius: 50%;
-    margin: 8px;
+    margin: 8px 10px;
 }
 
 .ball-spot:hover {
