@@ -135,12 +135,13 @@
   <script>'use strict';</script>
   <script src="js/Utils.js"></script>
   <script src="js/Model.js"></script>
+  <script src="js/View.js"></script>
   <script src="js/Controller.js"></script>
   <script>
   (function () {
     var model = new Model(),
-        controller = new Controller(model);
-
+        view = new View(model),
+        controller = new Controller(model, view);
   }());
   </script>
 </body>

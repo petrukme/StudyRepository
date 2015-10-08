@@ -11,26 +11,36 @@ function Model() {
 };
 
 Model.prototype.generateCombination = function () {
-    this._combination = this._combination.map( a => Utils.getRandomInt(0, this.BALL_TYPES_NUMBER));
+  this._combination = this._combination.map( a => Utils.getRandomInt(0, this.BALL_TYPES_NUMBER));
 }
 
 Model.prototype.isCombinationReady = function () {
-    return !Utils.haveUndefinedElements(this._currentCombination, this._combination.length);
+  return !Utils.haveUndefinedElements(this._currentCombination, this._combination.length);
 }
 
 Model.prototype.nextTurn = function() {
-    if(this.turnNumber === 8) {
-      this.gameOver('You lost!');
-    }
-    this.currentCombination = [];
-    this.turnNumber++;
+  if(this.turnNumber === 8) {
+    this.gameOver('You lost!');
   }
+  this.currentCombination = [];
+  this.turnNumber++;
+}
 
 Model.prototype.compareCombinations = function() {
-  return {
-    bulls: Utils.gotSameColorAndPosition(this._currentCombination, this._combination),
-    cows: Utils.gotSameColor(this._currentCombination, this._combination)
-  };
+  var res = {};
+
+  if(!this.isCombinationReady()) {
+    return;
+  }
+
+  res.bulls = Utils.gotSameColorAndPosition(this._currentCombination, this._combination),
+  res.cows = Utils.gotSameColor(this._currentCombination, this._combination)
+
+  if(res.bulls === this._combination.length) {
+    this.gameOver('Victory!');
+    return;
+  }
+  return res;
 }
 
 Model.prototype.setElementInCurrentCombination = function(index, value) {
